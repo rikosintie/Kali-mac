@@ -72,4 +72,4 @@ https://github.com/sharkdp/bat
 
 `sudo dpkg -i bat-musl_0.24.0_amd64.deb # adapt version number and architecture`
 
-    - 
+
