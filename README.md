@@ -52,4 +52,24 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
+### Oh My zsh themes
+Oh My ZSH offers a lot of themes. I found one that I really like called duellj. To install it change the ZSH-
+THEME line to:  
+ZSH_THEME="duellj"  
 
+I also like “amuse”. It’s similar to duellj but doesn’t put the username/machine name in the terminal. Since I’m
+on my personal laptop I don’t need that information. To use “amuse”  
+
+`ZSH_THEME="amuse"`
+
+Find more themes here: [zsh themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
+
+* Bat - A cat clone with syntax highlighting and Git integration
+This is a great upgrade to cat. The automatic paging, syntax highlighting, Git integration and the ability to show
+non-printable characters makes replacing cat with bat a no brainer.
+There are a lot of other features to bat. You should review the official Git repository at
+https://github.com/sharkdp/bat
+
+`sudo dpkg -i bat-musl_0.24.0_amd64.deb # adapt version number and architecture`
+
+    - 
