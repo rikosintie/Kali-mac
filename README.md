@@ -72,4 +72,18 @@ https://github.com/sharkdp/bat
 
 `sudo dpkg -i bat-musl_0.24.0_amd64.deb # adapt version number and architecture`
 
+If you want to use an alias so cat calls bat, add  
+`alias cat='bat'`
 
+to ~/.zshrc
+
+- Terminator as the terminal emulator
+  - `sudo apt install terminator -y`
+  - `sudo update-alternatives --config x-terminal-emulator`
+ 
+- tldr - Too Long, Didn't Read is like a man page but short and to the point.
+  - `sudo apt install tldr`
+ 
+- bd - Quickly go back to a specific parent directory in bash instead of typing "cd ../../.." redundantly.
+  - `sudo apt install bd'
+  - Reference - [bd on github](https://github.com/vigneshwaranr/bd)  
