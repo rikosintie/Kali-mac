@@ -87,3 +87,12 @@ to ~/.zshrc
 - bd - Quickly go back to a specific parent directory in bash instead of typing "cd ../../.." redundantly.
   - `sudo apt install bd'
   - Reference - [bd on github](https://github.com/vigneshwaranr/bd)  
+
+- speedtest-cli - Speedtest without the browser
+  - `sudo apt install speedtest-cli`
+ 
+- ipmitool - A tool work working with ipmi software like Dell iDrac and HP ilo
+  - `sudo apt-get install ipmitool`
+ 
+- SNMP - An oldie but goodie! SNMP is a valuable tool for a network engineer.
+  - `sudo apt install snmp`
