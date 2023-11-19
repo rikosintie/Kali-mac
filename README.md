@@ -125,7 +125,7 @@ touch ~/.oh-my-zsh/custom/my-aliases.zsh
 gedit ~/.oh-my-zsh/custom/my-aliases.zsh
 ```
 
-Create all of your custom aliases in this file.  
+Create all of your custom aliases in this file. Anytime that you add a alias you need to run `exec zsh` to update zsh.  
 
 * Bat - A cat clone with syntax highlighting and Git integration
 This is a great upgrade to cat. The automatic paging, syntax highlighting, Git integration and the ability to show non-printable characters makes replacing cat with bat a no brainer.
