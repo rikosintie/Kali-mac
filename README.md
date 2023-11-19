@@ -132,6 +132,7 @@ This is a great upgrade to cat. The automatic paging, syntax highlighting, Git i
 There are a lot of other features to bat. You should review the official Git repository at
 [sharkdp/bat](https://github.com/sharkdp/bat)
 
+Download the latest deb package [here](https://github.com/sharkdp/bat/releases/tag/v0.24.0) then install using:  
 `sudo dpkg -i bat-musl_0.24.0_amd64.deb # adapt version number and architecture`
 
 If you want to use an alias so that cat calls bat, add  
