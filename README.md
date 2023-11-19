@@ -125,7 +125,7 @@ touch ~/.oh-my-zsh/custom/my-aliases.zsh
 gedit ~/.oh-my-zsh/custom/my-aliases.zsh
 ```
 
-Create all of your custom aliases in this file. Anytime that you add a alias you need to run `exec zsh` to update zsh.  
+Create all of your custom aliases in this file. Anytime that you add an alias you need to run `exec zsh` to update zsh. I have an alias `sc` that does that. I also use `ec` to open .zshrc.  
 
 I preface my aliases with `mw-` which are initals for my first and last name. Then I can type `mw-` and hit tab to see all of my aliases.
 
