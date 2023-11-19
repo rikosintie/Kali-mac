@@ -137,7 +137,27 @@ mw-cpu10             mw-ipen0             mw-led               mw-nmshipv4      
 mw-cpu5              mw-ipen6             mw-nmconnectprof     mw-nmshprofiles      mw-nmwifi 
 ```
 
-That way I don't have to remember all of my aliases.
+That way I don't have to remember all of my aliases.  
+
+I found the following code while researching aliases and added it to the custom aliases file. It is so useful, I just type `path` and it lists all my paths in a list instead of all together. You can also include a word and it will grep for it.
+
+```bash
+~/04_tools/Kali-mac on  main ⌚ 10:17:59
+$ path
+/usr/local/sbin
+/usr/sbin
+/sbin
+/usr/local/bin
+/usr/bin
+/bin
+/usr/local/games
+/usr/games
+/home/bjones/.dotnet/tools
+
+~/04_tools/Kali-mac on  main ⌚ 10:21:47
+$ path tools
+/home/bjones/.dotnet/tools
+```
 
 * Bat - A cat clone with syntax highlighting and Git integration
 This is a great upgrade to cat. The automatic paging, syntax highlighting, Git integration and the ability to show non-printable characters makes replacing cat with bat a no brainer.
