@@ -19,13 +19,15 @@ Insert the usb flash drive and enter `lsblk` to find the name of the flash drive
 
 When the drive is ready the progress flag that we used with dd will show you what was copied. At that point, eject the flash drive and put it into the MacBook Pro.  
 
+## Repartioning the hard drive  
+
 During the install process, I selected "Guided - Use entire disk" and "separate /home partition". I didn't see a way to change the default partition sizes and I wasn't happy with them.  
 
-As soon as the install process finished I booted off of a "System Rescue" flash drive and used Gparted to move/resize the partitions. I can't recommend having a bootable "system rescue" flash drive with you anytime that a "Friend" needs help with a PC, windows, linux, or Mac.  
+To resize the partitions, I booted off of a "System Rescue" flash drive and used Gparted to move/resize the partitions. I highly recommend having a bootable "system rescue" flash drive with you anytime that a "Friend" needs help with a PC - windows, Linux, or Mac!  
 
 Download the "system rescue" iso [here](https://www.system-rescue.org/Download/)  
 
-`dd if=systemrescue-10.02-amd64.iso of=/dev/sdb bs=10M status=progress && sync
+`dd if=systemrescue-10.02-amd64.iso of=/dev/sdc bs=10M status=progress && sync
 `  
 
 I used the following partion sizes:
@@ -41,7 +43,7 @@ sda      8:0    0 465.9G  0 disk
 
 The reason for the large sda2 partition is that I wanted to use "Kali Tweaks" to do a full install of the Kali tools. When it finished the partition was 55% full. 
 
-The reason for the 51.7G SWAP partition is that I couldn't get suspend to work and to use hibernation Kali recommeds 1.5x of RAM. I have 16GB on this MacBook so I needed a minimum of 48GB.  
+The reason for the 51.7G SWAP partition is that I couldn't get suspend to work and to use hibernation Kali recommends 1.5x of RAM. I have 16GB on this MacBook so I needed a minimum of 48GB.  
 
 ## Installed software
 
