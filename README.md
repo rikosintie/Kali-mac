@@ -118,9 +118,12 @@ Find more themes here: [zsh themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Them
 
 ### Custom aliases in ohmyzsh  
 
-I like to keep my own aliases in an ohmyzsh "custom aliases" file. To create this file:
-`touch ~/.oh-my-zsh/custom/my-aliases.zsh`
-`gedit ~/.oh-my-zsh/custom/my-aliases.zsh`
+I like to keep my own aliases in an ohmyzsh "custom aliases" file. To create this file:  
+
+```
+touch ~/.oh-my-zsh/custom/my-aliases.zsh  
+gedit ~/.oh-my-zsh/custom/my-aliases.zsh
+```
 
 Create all of your custom aliases in this file.  
 
