@@ -124,7 +124,7 @@ I like to keep my own aliases in an ohmyzsh "custom aliases" file. To create thi
 
 Create all of your custom aliases in this file.  
 
-Bat - A cat clone with syntax highlighting and Git integration
+* Bat - A cat clone with syntax highlighting and Git integration
 This is a great upgrade to cat. The automatic paging, syntax highlighting, Git integration and the ability to show non-printable characters makes replacing cat with bat a no brainer.
 There are a lot of other features to bat. You should review the official Git repository at
 [sharkdp/bat](https://github.com/sharkdp/bat)
