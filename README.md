@@ -45,8 +45,11 @@ The reason for the large sda2 partition is that I wanted to use "Kali Tweaks" to
 The reason for the 51.7G SWAP partition is that I couldn't get suspend to work and to use hibernation Kali recommends 1.5x of RAM. I have 16GB on this MacBook so I needed a minimum of 48GB.  
 
 ## Installed software  
-This is just the initial software that I install on any Debian or Ubuntu disto. 
+
+This is just the initial software that I install on any Debian or Ubuntu disto.  
 Obviously, the software list will grow over time.
+
+I wrote a guide on using Ubuntu for network engineering. It has more detailed information on each of these tools. If you are new to Linux and the terminal I recommend you grab a copy. There are a lot of hard earned tips in it. You can download it [here](https://github.com/rikosintie/Documents/blob/master/Ubuntu-For-Network-Engineers-05303022.pdf):
 
 * tlp power management
   * sudo apt install tlp
@@ -62,21 +65,23 @@ file:
 #start autojump - /usr/share/autojump/
 . /usr/share/autojump/autojump.sh
 ```
+
 It will take a while before autojump has a lot of your directories memorized but once it does you will save a lot of time navigating the terminal.
 
-* Oh My ZSH
+* Oh My ZSH - I highly recommend installing Oh My ZSH. It is well run project and there are hundreds of themes, plugins and customizations available in it.  
   * sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   * Plugins
-      * git
-      * auto-autosuggestions
-      * zsh-completions
-      * zsh-syntax-highlighting
-      * history-substring-search
-      * colored-man-pages
-      * aliases
-      * zsh-docker-aliases
-   
+    * git
+    * auto-autosuggestions
+    * zsh-completions
+    * zsh-syntax-highlighting
+    * history-substring-search
+    * colored-man-pages
+    * aliases
+    * zsh-docker-aliases
+
     Format of plugins in the ~/.zshrc file
+
 ```
     plugins=(
       git
@@ -90,8 +95,7 @@ It will take a while before autojump has a lot of your directories memorized but
       )
 ```
 
-Download the plug ins (Autojump should already be installed if you have been following the book. If not
-follow the instructions in the previous section to install autojump.
+Download the plug ins (Autojump should already be installed if you have been following the book. If not follow the instructions in the previous section to install autojump.
 
 ```
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
@@ -127,19 +131,20 @@ to ~/.zshrc
 * Terminator as the terminal emulator
   * `sudo apt install terminator -y`
   * `sudo update-alternatives --config x-terminal-emulator`
- 
+
 * tldr - Too Long, Didn't Read is like a man page but short and to the point.
   * `sudo apt install tldr`
- 
+
 * bd - Quickly go back to a specific parent directory in bash instead of typing "cd ../../.." redundantly.
-  * `sudo apt install bd'
+  * `sudo apt install bd`
+  * Create an alias for bd `alias bd="bd -si"` in the ~/.zshrc file.
   * Reference - [bd on github](https://github.com/vigneshwaranr/bd)  
 
 * speedtest-cli - Speedtest without the browser
   * `sudo apt install speedtest-cli`
- 
+
 * ipmitool - A tool work working with ipmi software like Dell iDrac and HP ilo
   * `sudo apt-get install ipmitool`
- 
+
 * SNMP - An oldie but goodie! SNMP is a valuable tool for a network engineer.
   * `sudo apt install snmp`
