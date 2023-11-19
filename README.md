@@ -1,5 +1,15 @@
 # Kali-mac
-Kali install on 2015 MacBook 1502
+
+Kali install on 2015 MacBook Pro (Model 1502)
+
+## Initial Installation
+
+I followed the Kali.org website instructions to get Kali installed on 
+the 2015 MacBook Pro (Model 1502). The instructions are available here: [Installing Kali on Mac Hardware](https://www.kali.org/docs/installation/hard-disk-install-on-mac/)
+
+### Creating the bootable flash drive
+
+I downloaded the Installer Images iso file from [Installer Images](https://www.kali.org/get-kali/#kali-platforms). 
 
 ## Installed software
 * tlp power management
