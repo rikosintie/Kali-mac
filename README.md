@@ -69,7 +69,10 @@ file:
 It will take a while before autojump has a lot of your directories memorized but once it does you will save a lot of time navigating the terminal.
 
 * Oh My ZSH - I highly recommend installing Oh My ZSH. It is a well run project and there are hundreds of themes, plugins and customizations available in it.  
-  * `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+
+Normally you shouldn't copy a shell command from the Internet and paste it into your shell but this is how you install Oh My ZSH.  You can go to the Oh My ZSH github repository and review the install.sh file if you are worried.
+
+* `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
   * Plugins
     * git
     * auto-autosuggestions
