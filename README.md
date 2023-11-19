@@ -31,7 +31,7 @@ Download the "system rescue" iso [here](https://www.system-rescue.org/Download/)
 
 I used the following partion sizes:
 
-```
+```bash
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
 sda      8:0    0 465.9G  0 disk 
 ├─sda1   8:1    0   512M  0 part /boot/efi
@@ -40,7 +40,7 @@ sda      8:0    0 465.9G  0 disk
 └─sda4   8:4    0   332G  0 part /home
 ```
 
-The reason for the large sda2 partition is that I wanted to use "Kali Tweaks" to do a full install of the Kali tools. When it finished the partition was 55% full. 
+The reason for the large sda2 partition is that I wanted to use "Kali Tweaks" to do a full install of the Kali tools. When it finished the partition was 55% full.  
 
 The reason for the 51.7G SWAP partition is that I couldn't get suspend to work and to use hibernation Kali recommends 1.5x of RAM. I have 16GB on this MacBook so I needed a minimum of 48GB.  
 
@@ -61,7 +61,7 @@ I wrote a guide on using Ubuntu for network engineering. It has more detailed in
 After the install finishes you need to edit `~/.zhrc (nano ~/.zshrc)` and add the following to the end of the
 file:
 
-```
+```bash
 #start autojump - /usr/share/autojump/
 . /usr/share/autojump/autojump.sh
 ```
@@ -69,7 +69,7 @@ file:
 It will take a while before autojump has a lot of your directories memorized but once it does you will save a lot of time navigating the terminal.
 
 * Oh My ZSH - I highly recommend installing Oh My ZSH. It is a well run project and there are hundreds of themes, plugins and customizations available in it.  
-  * sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  * `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
   * Plugins
     * git
     * auto-autosuggestions
@@ -82,7 +82,7 @@ It will take a while before autojump has a lot of your directories memorized but
 
     Format of plugins in the ~/.zshrc file
 
-```
+```bash
     plugins=(
       git
       zsh-completions
@@ -97,7 +97,7 @@ It will take a while before autojump has a lot of your directories memorized but
 
 Download the plug ins (Autojump should already be installed if you have been following this guide. If not follow the instructions in the previous section to install autojump.
 
-```
+```bash
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-
 highlighting
@@ -120,7 +120,7 @@ Find more themes here: [zsh themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Them
 
 I like to keep my own aliases in an ohmyzsh "custom aliases" file. To create this file:  
 
-```
+```bash
 touch ~/.oh-my-zsh/custom/my-aliases.zsh  
 gedit ~/.oh-my-zsh/custom/my-aliases.zsh
 ```
@@ -140,6 +140,20 @@ mw-cpu5              mw-ipen6             mw-nmconnectprof     mw-nmshprofiles  
 That way I don't have to remember all of my aliases.  
 
 I found the following code while researching aliases and added it to the custom aliases file. It is so useful, I just type `path` and it lists all my paths in a list instead of all together. You can also include a word and it will grep for it.
+
+```bash
+# "path" shows current path, one element per line.
+# If an argument is supplied, grep for it.
+path() {
+    test -n "$1" && {
+        echo $PATH | perl -p -e "s/:/\n/g;" | grep -i "$1"
+    } || {
+        echo $PATH | perl -p -e "s/:/\n/g;"
+    }
+}
+```
+
+Here is the output of the command
 
 ```bash
 ~/04_tools/Kali-mac on  main ⌚ 10:17:59
