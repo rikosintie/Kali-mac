@@ -73,7 +73,7 @@ It will take a while before autojump has a lot of your directories memorized but
 Normally you shouldn't copy a shell command from the Internet and paste it into your shell but this is how you install Oh My ZSH.  You can go to the Oh My ZSH github repository and review the install.sh file if you are worried.
 
 * `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-  * Plugins
+  * Plugins that I use:
     * git
     * auto-autosuggestions
     * zsh-completions
