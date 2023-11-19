@@ -127,6 +127,18 @@ gedit ~/.oh-my-zsh/custom/my-aliases.zsh
 
 Create all of your custom aliases in this file. Anytime that you add a alias you need to run `exec zsh` to update zsh.  
 
+I preface my aliases with `mw-` which are initals for my first and last name. Then I can type `mw-` and hit tab to see all of my aliases.
+
+```bash
+mw-ipen0
+mw-bright            mw-dang              mw-ipen8             mw-nmlldp            mw-nmshrun           mw-ports                                
+mw-bright60          mw-extip             mw-kbd               mw-nmshap            mw-nmshstate         mw-running_services                     
+mw-cpu10             mw-ipen0             mw-led               mw-nmshipv4          mw-nmshwifi          mwmail                                  
+mw-cpu5              mw-ipen6             mw-nmconnectprof     mw-nmshprofiles      mw-nmwifi 
+```
+
+That way I don't have to remember all of my aliases.
+
 * Bat - A cat clone with syntax highlighting and Git integration
 This is a great upgrade to cat. The automatic paging, syntax highlighting, Git integration and the ability to show non-printable characters makes replacing cat with bat a no brainer.
 There are a lot of other features to bat. You should review the official Git repository at
