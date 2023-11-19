@@ -9,7 +9,7 @@ Kali install on 2015 MacBook 1502
 * autojump - A cd command that learns - easily navigate directories from the command line
   - sudo apt install autojump
 
-After the install finishes you need to edit `~/.bashrc (nano ~/.bashrc)` and add the following to the end of the
+After the install finishes you need to edit `~/.zhrc (nano ~/.zshrc)` and add the following to the end of the
 file:
 ```
 #start autojump - /usr/share/autojump/
