@@ -17,7 +17,7 @@
   - [speedtest-cli](#speedtest-cli)
   - [ipmitool](#ipmitool)
   - [SNMP](#snmp)
-    - [A couple of examples for Cisco devices](#a-couple-of-examples-for-cisco-devices)
+    - [Examples for Cisco devices](#examples-for-cisco-devices)
     - [To install the MIBs](#to-install-the-mibs)
     - [To display the arp table on a Cisco switch](#to-display-the-arp-table-on-a-cisco-switch)
     - [To display a switch serial number](#to-display-a-switch-serial-number)
@@ -275,7 +275,7 @@ mibs :
 
 Put a `#` in front of "mibs", save and exit
 
-#### A couple of examples for Cisco devices
+#### Examples for Cisco devices
 
 NOTE: A lot has changed since 2015 when I first wrote this in the Ubuntu for Nework Engineers guide. Cisco now has separate mib files for EVERY device.  This page explains how things have changed: [SNMP FAQ](https://www.cisco.com/c/en/us/support/docs/ip/simple-network-management-protocol-snmp/9226-mibs-9226.html)
 
