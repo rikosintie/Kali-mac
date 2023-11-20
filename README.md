@@ -20,6 +20,8 @@
     - [A couple of examples for Cisco devices](#a-couple-of-examples-for-cisco-devices)
     - [To install the MIBs](#to-install-the-mibs)
     - [To display the arp table on a Cisco switch](#to-display-the-arp-table-on-a-cisco-switch)
+    - [To display a switch serial number](#to-display-a-switch-serial-number)
+    - [To display the system information](#to-display-the-system-information)
     - [SNMP References](#snmp-references)
 
 Kali install on 2015 MacBook Pro (Model 1502)
@@ -312,6 +314,30 @@ iso.3.6.1.2.1.3.1.1.2.96.1.10.243.2.4 "6C B2 AE 09 F8 C4 "
 iso.3.6.1.2.1.3.1.1.2.96.1.10.243.2.5 "7C AD 74 50 10 42 "
 iso.3.6.1.2.1.3.1.1.2.96.1.10.243.2.6 "38 0E 4D F9 86 8C "
 iso.3.6.1.2.1.3.1.1.2.96.1.10.243.2.7 "6C B2 AE 09 F5 48 "
+```
+
+#### To display a switch serial number
+
+`snmpget -v 2c -c Sup3rS3cr3t -O s 10.207.1.26 .1.3.6.1.2.1.47.1.1.1.1.11.1001`  
+
+iso.3.6.1.2.1.47.1.1.1.1.11.1001 = STRING: "FDO1320X0XP"  
+
+#### To display the system information  
+
+`snmpbulkwalk -v2c -Os -c Sup3rS3cr3t 10.243.1.1 system`  
+```bash
+sysDescr.0 = STRING: Cisco IOS Software, c6880x Software (c6880x-ADVENTERPRISEK9-M),
+Version 15.2(1)SY7, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Thu 05-Jul-18 04:32 by prod_rel_team
+sysObjectID.0 = OID: enterprises.9.1.1934
+sysUpTimeInstance = Timeticks: (416930035) 48 days, 6:08:20.35
+sysContact.0 = STRING:
+sysName.0 = STRING: TEST-6880x.home.local
+sysLocation.0 = STRING: <Home Lab>
+sysServices.0 = INTEGER: 78
+sysORLastChange.0 = Timeticks: (0) 0:00:00.00
 ```
 
 #### SNMP References  
