@@ -327,7 +327,7 @@ iso.3.6.1.2.1.47.1.1.1.1.11.1001 = STRING: "FDO1320X0XP"
 
 #### To display the system information  
 
-`snmpbulkwalk -v2c -Os -c Sup3rS3cr3t 10.243.1.1 system`  
+`snmpbulkwalk -v2c -Os -c Sup3rS3cr3t 10.243.1.1 system`
 
 ```bash
 sysDescr.0 = STRING: Cisco IOS Software, c6880x Software (c6880x-ADVENTERPRISEK9-M),
@@ -343,6 +343,13 @@ sysLocation.0 = STRING: <Home Lab>
 sysServices.0 = INTEGER: 78
 sysORLastChange.0 = Timeticks: (0) 0:00:00.00
 ```
+
+If the "system" name fails with  
+ `system: Unknown Object Identifier (Sub-id not found: (top) -> system)`
+
+Try  
+`snmpbulkwalk -v2c -Os -c Sup3rS3cr3t 10.243.1.1 1.3.6.1.2.1.1
+`  
 
 #### SNMP References  
 
