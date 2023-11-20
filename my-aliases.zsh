@@ -4,6 +4,10 @@ alias bd='. bd -si'
 # run bat instead of cat
 alias cat="bat"
 
+# gnome-screenshot from terminal
+alias gsw='gnome-screenshot -w'
+alias gsa='gnome-screenshot -a'
+ 
 alias python=python3
 alias pip=pip3
 # Return the public IP address your are using
@@ -49,10 +53,13 @@ alias mw-nmshwifi='(){sudo nmcli -a -p device wifi show-password ifname $1}'
 alias mw-running_services='systemctl list-units --type=service --state=running'
 
 # open ~/.zshrc in using the default editor specified in $EDITOR
-alias ec="$EDITOR $HOME/.zshrc"
+alias ec='$EDITOR $HOME/.zshrc'
+
+# open ~/.oh-my-zsh/custom/my-aliases.zsh
+alias ec1='$EDITOR ~/.oh-my-zsh/custom/my-aliases.zsh'
 
 # rerun ~/.zshrc after making changes
-alias sc="exec zsh"
+alias sc='exec zsh'
 
 #add sudo and repeat the last command
 alias mw-dang='sudo $(fc -ln -1)'
@@ -117,4 +124,3 @@ path() {
         echo $PATH | perl -p -e "s/:/\n/g;"
     }
 }
-
