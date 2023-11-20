@@ -273,7 +273,7 @@ MIBS line in /etc/snmp/snmp.conf
 mibs :
 ```
 
-save and exit
+Put a `#` in front of "mibs", save and exit
 
 #### A couple of examples for Cisco devices
 
@@ -328,6 +328,7 @@ iso.3.6.1.2.1.47.1.1.1.1.11.1001 = STRING: "FDO1320X0XP"
 #### To display the system information  
 
 `snmpbulkwalk -v2c -Os -c Sup3rS3cr3t 10.243.1.1 system`  
+
 ```bash
 sysDescr.0 = STRING: Cisco IOS Software, c6880x Software (c6880x-ADVENTERPRISEK9-M),
 Version 15.2(1)SY7, RELEASE SOFTWARE (fc1)
@@ -347,8 +348,9 @@ sysORLastChange.0 = Timeticks: (0) 0:00:00.00
 
 SNMP is a great tool to have in your toolbox. It is NOT easy to use and will require you to build a lab and learn a lot about an anient technology. However, it wil pay off in pentesting and network refreshes.  
 
-[Ubuntu MIBS downloader](https://launchpad.net/ubuntu/xenial/amd64/snmp-mibs-downloader/1.1)
-[Online MIB Browser](https://mibbrowser.online/mibdb_search.php)
-[Using SNMP to retrieve the ARP and mac-address tables from a switch](https://networkengineering.stackexchange.com/questions/2990/translating-snmpwalk-output-into-human-readable-format/775/)
-[Cisco MIB Locator](https://mibs.cloudapps.cisco.com/ITDIT/MIBS/MainServlet)
-[Did not find 'zeroDotZero' in module SNMPv2-SMI](https://serverfault.com/questions/440319/did-not-find-zerodotzero-in-module-snmpv2-smi)
+- [Brute Forcing SNMP with NMAP](https://mwhubbard.blogspot.com/2015/03/brute-forcing-snmp-with-nmap.html)
+- [Ubuntu MIBS downloader](https://launchpad.net/ubuntu/xenial/amd64/snmp-mibs-downloader/1.1)
+- [Online MIB Browser](https://mibbrowser.online/mibdb_search.php)
+- [Using SNMP to retrieve the ARP and mac-address tables from a switch](https://networkengineering.stackexchange.com/questions/2990/translating-snmpwalk-output-into-human-readable-format/775/)
+- [Cisco MIB Locator](https://mibs.cloudapps.cisco.com/ITDIT/MIBS/MainServlet)
+- [Did not find 'zeroDotZero' in module SNMPv2-SMI](https://serverfault.com/questions/440319/did-not-find-zerodotzero-in-module-snmpv2-smi)
