@@ -26,7 +26,7 @@
 
 ## Initial Installation
 
-Kali install on 2015 MacBook Pro (Model 1502)
+Kali install on 2015 MacBook Pro (Model 1502)  
 This is a simple tutorial on how to install Kali on a 2015 MacBook Pro. I didn't think it would work but it did. Now I will work on an Ansible playbook so that I can wipe and rebuild easily.  
 
 I followed the Kali.org website instructions to get Kali installed on the 2015 MacBook Pro (Model 1502). The instructions are available here: [Installing Kali on Mac Hardware](https://www.kali.org/docs/installation/hard-disk-install-on-mac/)
@@ -261,15 +261,16 @@ An oldie but goodie! SNMP is a valuable tool for a network engineer or pentester
 
 - `sudo apt install snmp`
 
-Due to license issues Canonical disables MIBs by default. To enable them simply comment out the
-MIBS line in /etc/snmp/snmp.conf
+Due to license issues the MIBs disabled by default. To enable them simply comment out the
+MIBS line in /etc/snmp/snmp.conf  
+
 `sudo gedit /etc/snmp/snmp.conf`  
 
 ```bash
 # As the snmp packages come without MIB files due to license reasons, loading
 # of MIBs is disabled by default. If you added the MIBs you can reenable
 # loading them by commenting out the following line.
-#mibs :
+mibs :
 ```
 
 save and exit
@@ -278,7 +279,9 @@ save and exit
 
 NOTE: A lot has changed since 2015 when I first wrote this in the Ubuntu for Nework Engineers guide. Cisco now has separate mib files for EVERY device.  This page explains how things have changed: [SNMP FAQ](https://www.cisco.com/c/en/us/support/docs/ip/simple-network-management-protocol-snmp/9226-mibs-9226.html)
 
-Get the v2 mibs from Cisco's [mib site](https://cisco.github.io/cisco-mibs/v2/v2.tar.gz)  
+You can still get the v2 mibs from Cisco's [mib site](https://cisco.github.io/cisco-mibs/v2/v2.tar.gz). I haven't tested against anything but an IOS based switch (2960s) so you'll need to do some testing against newer devices.  
+
+As always, preparation is the key to success!
 
 #### To install the MIBs
 
