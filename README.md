@@ -16,6 +16,9 @@
   - [bd](#bd)
   - [speedtest-cli](#speedtest-cli)
   - [ipmitool](#ipmitool)
+  - [Flatpak](#flatpak)
+    - [Install the Software Flatpak plugin](#install-the-software-flatpak-plugin)
+    - [Add the Flathub repository](#add-the-flathub-repository)
   - [SNMP](#snmp)
     - [Examples for Cisco devices](#examples-for-cisco-devices)
     - [To install the MIBs](#to-install-the-mibs)
@@ -227,7 +230,9 @@ to ~/.oh-my-zsh/custom/my-aliases.zsh
 
 ### Terminator
 
-I like terminator as as my terminal emulator. It supports plugins like `logger`, `watch for activity` and tabs. There many emulators for Linux, you may want to Google it yourself and try a different one.  
+I like [terminator](https://github.com/gnome-terminator/terminator) as as my terminal emulator. It supports plugins like `logger`, `watch for activity` and tabs. There many emulators for Linux, you may want to Google "Linux Terminal Emulators" yourself and try a different one.  
+
+Terminator was first released in 2007. It then transferred to a different team and is now (2023) back under active development on github. The documentation is very helpful and can be found [here](https://gnome-terminator.readthedocs.io/en/latest/gettingstarted.html#context-menu)
 
 - `sudo apt install terminator -y`
 - `sudo update-alternatives --config x-terminal-emulator`
@@ -254,6 +259,24 @@ Speedtest without the browser
 A tool for working with ipmi software like Dell iDrac and HP ilo
 
 - `sudo apt-get install ipmitool`
+
+### Flatpak
+
+Flatpak is a universal installer for Linux. It is similar to Snap on Ubuntu.  
+
+`apt install flatpak`
+
+#### Install the Software Flatpak plugin  
+`apt install gnome-software-plugin-flatpak`
+
+#### Add the Flathub repository
+
+Flathub is the best place to get Flatpak apps. To enable it, run:  
+`flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo`
+
+Unfortunately, a reboot is required to activate Flatpak.
+
+Once the system restarts you can go to [flathub](https://flathub.org/) - The Linux App Store and look for applications to install.  
 
 ### SNMP
 
