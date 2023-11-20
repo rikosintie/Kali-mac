@@ -24,10 +24,10 @@
     - [To display the system information](#to-display-the-system-information)
     - [SNMP References](#snmp-references)
 
-Kali install on 2015 MacBook Pro (Model 1502)
-This is a simple tutorial on how to install Kali on a 2015 MacBook Pro. I didn't think it would work but it did. Now I will work on an Ansible playbook so that I can wipe and rebuild easily.
-
 ## Initial Installation
+
+Kali install on 2015 MacBook Pro (Model 1502)
+This is a simple tutorial on how to install Kali on a 2015 MacBook Pro. I didn't think it would work but it did. Now I will work on an Ansible playbook so that I can wipe and rebuild easily.  
 
 I followed the Kali.org website instructions to get Kali installed on the 2015 MacBook Pro (Model 1502). The instructions are available here: [Installing Kali on Mac Hardware](https://www.kali.org/docs/installation/hard-disk-install-on-mac/)
 
