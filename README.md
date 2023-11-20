@@ -361,3 +361,4 @@ SNMP is a great tool to have in your toolbox. It is NOT easy to use and will req
 - [Using SNMP to retrieve the ARP and mac-address tables from a switch](https://networkengineering.stackexchange.com/questions/2990/translating-snmpwalk-output-into-human-readable-format/775/)
 - [Cisco MIB Locator](https://mibs.cloudapps.cisco.com/ITDIT/MIBS/MainServlet)
 - [Did not find 'zeroDotZero' in module SNMPv2-SMI](https://serverfault.com/questions/440319/did-not-find-zerodotzero-in-module-snmpv2-smi)
+- [snmpwalk Unknown Object Identifier](https://serverfault.com/questions/815535/snmpwalk-unknown-object-identifier)
