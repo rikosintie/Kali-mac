@@ -3,7 +3,9 @@
 - [Initial Installation](#initial-installation)
   - [Creating the bootable flash drive](#creating-the-bootable-flash-drive)
   - [Repartioning the hard drive](#repartioning-the-hard-drive)
-- [Ubuntu for Network Engineers](#ubuntu-for-network-engineers)
+- [A Couple Guides to help you with Linux](#a-couple-guides-to-help-you-with-linux)
+  - [Ubuntu for Network Engineers](#ubuntu-for-network-engineers)
+  - [The Hackers Choice](#the-hackers-choice)
 - [Installed software](#installed-software)
   - [Oh My ZSH](#oh-my-zsh)
     - [Plugins that I use](#plugins-that-i-use)
@@ -72,9 +74,22 @@ The reason for the large sda2 partition is that I wanted to use "Kali Tweaks" to
 
 The reason for the 51.7G SWAP partition is that I couldn't get suspend to work and to use hibernation Kali recommends 1.5x of RAM. I have 16GB on this MacBook so I needed a minimum of 24GB but I  figured i'd double it.  
 
-## Ubuntu for Network Engineers
+## A Couple Guides to help you with Linux
 
-I wrote a guide on using Ubuntu for network engineering. It has more detailed information on each of these tools. If you are new to Linux and the terminal I recommend you grab a copy. There are a lot of hard earned tips in it. You can download it [here](https://github.com/rikosintie/Documents/blob/master/Ubuntu-For-Network-Engineers-05303022.pdf):
+### Ubuntu for Network Engineers
+
+I wrote a guide on using Ubuntu for network engineering. It has more detailed information on each of these tools. If you are new to Linux and the terminal I recommend you grab a copy. There are a lot of hard earned tips in it. You can download it [here](https://github.com/rikosintie/Documents/blob/master/Ubuntu-For-Network-Engineers-05303022.pdf)
+
+### The Hackers Choice  
+The Hacker's Choice site is great. The IPv6 Attack Tookit is aging now but it's still a great toolkit.  
+
+They put statements like this on everything "**We show the tricks 'as is' without any explanation why they work. You need to know Linux to understand how and why they work.**" And "**It's always good to commit suicide when exiting a shell.**"  
+
+ `alias exit='kill -9 $$'`
+
+I was really annoyed when I first installed the toolkit but it turned out to be a good idea. I had to do a lot of learning to use the toolkit but I am better for it.  
+
+[THC's favourite Tips, Tricks & Hacks (Cheat Sheet)](https://github.com/hackerschoice/thc-tips-tricks-hacks-cheat-sheet#bash-no-history)
 
 ## Installed software  
 
@@ -267,6 +282,7 @@ Flatpak is a universal installer for Linux. It is similar to Snap on Ubuntu.
 `apt install flatpak`
 
 #### Install the Software Flatpak plugin  
+
 `apt install gnome-software-plugin-flatpak`
 
 #### Add the Flathub repository
