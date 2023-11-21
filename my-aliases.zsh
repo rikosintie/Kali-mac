@@ -10,6 +10,13 @@ alias gsa='gnome-screenshot -a'
  
 alias python=python3
 alias pip=pip3
+
+# start docker iperf3 server on port 5201
+alias mw-iperf3='sudo docker run -it --rm --name=iperf-srv -p 5201:5201 clearlinux/iperf -s'
+
+# start docker iperf3 client on port 5201
+alias mw-iperf3c='sudo docker run -it --rm --network=host -p 5201 clearlinux/iperf -c $1'
+
 # Return the public IP address your are using
 alias mw-extip="dig +short myip.opendns.com @resolver1.opendns.com"
 
