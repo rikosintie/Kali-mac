@@ -91,6 +91,13 @@ I was really annoyed when I first installed the toolkit but it turned out to be 
 
 [THC's favourite Tips, Tricks & Hacks (Cheat Sheet)](https://github.com/hackerschoice/thc-tips-tricks-hacks-cheat-sheet#bash-no-history)
 
+Pro-Tip: The THC IPv6 toolkit is installed on Kali with "large" or "Everything" metapackages. But, for some reason, you have to prepend "atk-" to the tools. For example,
+
+```bash
+sudo atk6-detect-new-ip6 wlan0
+Started ICMP6 DAD detection (Press Control-C to end) ...
+```
+
 ## Installed software  
 
 This is just the initial software that I install on any Debian or Ubuntu disto.  
