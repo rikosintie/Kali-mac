@@ -81,7 +81,7 @@ The reason for the 51.7G SWAP partition is that I couldn't get suspend to work a
 I wrote a guide on using Ubuntu for network engineering. It has more detailed information on each of these tools. If you are new to Linux and the terminal I recommend you grab a copy. There are a lot of hard earned tips in it. You can download it [here](https://github.com/rikosintie/Documents/blob/master/Ubuntu-For-Network-Engineers-05303022.pdf)
 
 ### The Hackers Choice  
-The Hacker's Choice site is great. The IPv6 Attack Tookit is aging now but it's still a great toolkit.  
+The Hacker's Choice site is great. The IPv6 Attack Tookit is aging now but it's still a great toolkit for IPv6 hacking.  
 
 They put statements like this on everything "**We show the tricks 'as is' without any explanation why they work. You need to know Linux to understand how and why they work.**" And "**It's always good to commit suicide when exiting a shell.**"  
 
