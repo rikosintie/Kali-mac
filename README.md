@@ -30,7 +30,9 @@
   - [keepassxc](#keepassxc)
   - [IPv4Bypass](#ipv4bypass)
   - [D(HE)ater](#dheater)
+  - [Ubiquiti Discovery Protocol](#ubiquiti-discovery-protocol)
   - [SNMP](#snmp)
+    - [My blog posts on snmp hacking](#my-blog-posts-on-snmp-hacking)
     - [Installing snmp](#installing-snmp)
     - [snmpcheck](#snmpcheck)
     - [onesixtyone](#onesixtyone)
@@ -501,6 +503,41 @@ docker run --tty --rm balasys/dheater --protocol tls ecc256.badssl.com
 docker run --tty --rm balasys/dheater --protocol ssh ecc256.badssl.com
 ```
 
+### Ubiquiti Discovery Protocol
+
+ Ubiquiti devices use UDP on port 10001 for autodiscover of other Ubiquiti devices.
+
+To look at what the discover sends out, you can use the following commands. No authentication is required to get the output. As with all network devices, you should use a dedicated management vlan and ACL it off so that only authorized stations can access the management interface.
+
+This is from a NanoStation 5 AC loco in my lab. It has the following settings:
+
+```bash
+SSID - death2all
+firmware version - WA.v8.5.11.39842.190109.1449.bin
+Device name - Office
+```
+
+```bash
+
+echo -ne "\x01\x00\x00\x00" | socat -t 1 udp:192.168.10.50:10001 - | hexdump -C
+00000000  01 00 00 9e 01 00 06 fc  ec da c4 6e 55 02 00 0a  |...........nU...|
+00000010  fc ec da c4 6e 55 c0 a8  0a 32 02 00 0a fc ec da  |....nU...2......|
+00000020  c4 6e 55 a9 fe 6e 55 03  00 22 57 41 2e 61 72 39  |.nU..nU.."WA.ar9|
+00000030  33 34 78 2e 76 38 2e 37  2e 31 2e 34 32 38 33 32  |34x.v8.7.1.42832|
+00000040  2e 32 30 30 36 32 33 2e  31 36 34 31 0a 00 04 05  |.200623.1641....|
+00000050  a3 c9 d8 0b 00 06 4f 66  66 69 63 65 0c 00 07 4c  |......Office...L|
+00000060  6f 63 6f 35 41 43 0d 00  09 64 65 61 74 68 32 61  |oco5AC...death2a|
+00000070  6c 6c 0e 00 01 03 10 00  02 e7 fa 13 00 06 fc ec  |ll..............|
+00000080  da c4 6e 55 14 00 14 4e  61 6e 6f 53 74 61 74 69  |..nU...NanoStati|
+00000090  6f 6e 20 35 41 43 20 6c  6f 63 6f 18 00 04 00 00  |on 5AC loco.....|
+000000a0  00 00                                             |..|
+000000a2
+
+```
+Here is a blog I wrote about the Ubiquiti discovery protocol.
+
+[Ubiquiti Discovery Protocol - Find the firmware version-SSID-Model](https://mwhubbard.blogspot.com/2019/02/ubiquiti-discovery-protocol-find.html)
+
 ### SNMP
 
 An oldie but goodie! SNMP is a valuable tool for a network engineer or pentester. It's surprising how many devices are deployed with a community string of "public". Using SNMP you can retrieve a lot of information about the devices.
@@ -508,6 +545,14 @@ An oldie but goodie! SNMP is a valuable tool for a network engineer or pentester
 This is a good video on snmp enumeration in [Kali](https://www.youtube.com/watch?v=zYqSOcbVZ4k). The built in tools are good and I will show how to install vendor specific MIBs to extend your scanning.
 
 I have a python script that that wraps several nmap scripts for ease of use. You can grab it [here](https://github.com/rikosintie/nmap-python). See script 14 for snmp.
+
+#### My blog posts on snmp hacking
+
+- [How to Download an IOS configuration with NMAP's snmp-ios-config Script](https://mwhubbard.blogspot.com/2015/03/how-to-download-ios-configuration-with.html)
+- [Brute Forcing SNMP with NMAP](https://mwhubbard.blogspot.com/2015/03/brute-forcing-snmp-with-nmap.html)
+
+Pro-tip:
+Use `site:mwhubbard.blogspot.com snmp` in a browser to search for snmp blogs on my site.
 
 #### Installing snmp
 
