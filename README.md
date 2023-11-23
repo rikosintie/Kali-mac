@@ -356,8 +356,10 @@ The easiest way to get started with this image is by simply pulling it from Dock
   - `docker pull clearlinux/iperf`
 
 - Start a container using the examples below:
-        **Run as Server:**
-  - `sudo docker run -it --rm --name=iperf-srv -p 5201:5201 clearlinux/iperf -s`
+
+**Run as Server:**
+
+- `sudo docker run -it --rm --name=iperf-srv -p 5201:5201 clearlinux/iperf -s`
 
 I created aliases in the ~/.oh-my-zsh/zsh-aliases.zsh file for the server and client versions:
 
