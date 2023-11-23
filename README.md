@@ -31,10 +31,10 @@
   - [IPv4Bypass](#ipv4bypass)
   - [D(HE)ater](#dheater)
   - [SNMP](#snmp)
-  - [Installing snmp](#installing-snmp)
-  - [snmpcheck](#snmpcheck)
-  - [onesixtyone](#onesixtyone)
-    - [Examples for Cisco devices](#examples-for-cisco-devices)
+    - [Installing snmp](#installing-snmp)
+    - [snmpcheck](#snmpcheck)
+    - [onesixtyone](#onesixtyone)
+  - [Examples for Cisco devices](#examples-for-cisco-devices)
     - [To install the MIBs](#to-install-the-mibs)
     - [To display the arp table on a Cisco switch](#to-display-the-arp-table-on-a-cisco-switch)
     - [To display a switch serial number](#to-display-a-switch-serial-number)
@@ -509,7 +509,7 @@ This is a good video on snmp enumeration in [Kali](https://www.youtube.com/watch
 
 I have a python script that that wraps several nmap scripts for ease of use. You can grab it [here](https://github.com/rikosintie/nmap-python). See script 14 for snmp.
 
-### Installing snmp
+#### Installing snmp
 
 - `sudo apt install snmp`
 
@@ -527,7 +527,7 @@ mibs :
 
 Put a `#` in front of "mibs", save and exit
 
-### snmpcheck
+#### snmpcheck
 
 This tool is built into kali. Here is an example against a Cisco 2960s
 
@@ -548,9 +548,28 @@ Copyright (c) 2005-2015 by Matteo Cantoni (www.nothink.org)
   Uptime snmp                   : -
   Uptime system                 : 00:55:56.67
   System date                   : -
+  ... Truncated interfaces for brevity
+  [*] Network IP:
+
+  Id                    IP Address            Netmask               Broadcast
+  10                    192.168.10.15         255.255.255.0         1
+
+[*] TCP connections and listening ports:
+
+  Local address         Local port            Remote address        Remote port           State
+  192.168.10.15         22                    192.168.10.154        42148                 established
+
+[*] Listening UDP ports:
+
+  Local address         Local port
+  192.168.10.15         161
+  192.168.10.15         162
+  192.168.10.15         2228
+  192.168.10.15         10002
+  192.168.10.15         53617
 ```
 
-### onesixtyone
+#### onesixtyone
 
 This tool allows you to use a dictionary of community strings and a file for hosts.
 
@@ -571,10 +590,7 @@ Scanning 256 hosts, 1 communities
 Error in sendto: Permission denied
 ```
 
-
-
-
-#### Examples for Cisco devices
+### Examples for Cisco devices
 
 NOTE: A lot has changed since 2015 when I first wrote this in the Ubuntu for Nework Engineers guide. Cisco now has separate mib files for EVERY device.  This page explains how things have changed: [SNMP FAQ](https://www.cisco.com/c/en/us/support/docs/ip/simple-network-management-protocol-snmp/9226-mibs-9226.html)
 
