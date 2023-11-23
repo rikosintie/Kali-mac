@@ -21,6 +21,7 @@
   - [Flatpak](#flatpak)
     - [Install the Software Flatpak plugin](#install-the-software-flatpak-plugin)
     - [Add the Flathub repository](#add-the-flathub-repository)
+  - [Mission Center](#mission-center)
   - [Neofetch](#neofetch)
 - [Additional Tools not related to the Kali Installation](#additional-tools-not-related-to-the-kali-installation)
   - [keepassxc](#keepassxc)
@@ -305,6 +306,14 @@ Flathub is the best place to get Flatpak apps. To enable it, run:
 Unfortunately, a reboot is required to activate Flatpak.
 
 Once the system restarts you can go to [flathub](https://flathub.org/) - The Linux App Store and look for applications to install.
+
+### Mission Center
+
+Mission Center is the tool I wanted from Flatpak. It's modeled after the Windows Task manager and has a clean look to it.
+
+<p align="center" width="100%">
+    <img width="50%" src="https://github.com/rikosintie/Kali-mac/blob/main/images/Mission-Center.png">
+</p>
 
 ### Neofetch
 
