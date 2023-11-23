@@ -31,6 +31,9 @@
   - [IPv4Bypass](#ipv4bypass)
   - [D(HE)ater](#dheater)
   - [SNMP](#snmp)
+  - [Installing snmp](#installing-snmp)
+  - [snmpcheck](#snmpcheck)
+  - [onesixtyone](#onesixtyone)
     - [Examples for Cisco devices](#examples-for-cisco-devices)
     - [To install the MIBs](#to-install-the-mibs)
     - [To display the arp table on a Cisco switch](#to-display-the-arp-table-on-a-cisco-switch)
@@ -386,7 +389,7 @@ This used to be a daily task on Linux but now it's somewhat rare to have to buil
 
 Download the tarball from [downloads](https://downloads.es.net/pub/iperf/)  - As of November, 2023 this is the latest tarball
 
-`iperf-3-current.tar.gz`
+`iperf-3-current.tar.gz   14-Sep-2023 18:40       649330`
 
 Unpack the file, cd to the iperf directory, and run the build tools.
 
@@ -397,6 +400,7 @@ cd iperf-3.15
 sudo make
 sudo make install
 ldconfig
+iperf3 --help
 ```
 
 ### To use iPerf3 as a client
@@ -501,6 +505,12 @@ docker run --tty --rm balasys/dheater --protocol ssh ecc256.badssl.com
 
 An oldie but goodie! SNMP is a valuable tool for a network engineer or pentester. It's surprising how many devices are deployed with a community string of "public". Using SNMP you can retrieve a lot of information about the devices.
 
+This is a good video on snmp enumeration in [Kali](https://www.youtube.com/watch?v=zYqSOcbVZ4k). The built in tools are good and I will show how to install vendor specific MIBs to extend your scanning.
+
+I have a python script that that wraps several nmap scripts for ease of use. You can grab it [here](https://github.com/rikosintie/nmap-python). See script 14 for snmp.
+
+### Installing snmp
+
 - `sudo apt install snmp`
 
 Due to license issues the MIBs disabled by default. To enable them simply comment out the
@@ -516,6 +526,53 @@ mibs :
 ```
 
 Put a `#` in front of "mibs", save and exit
+
+### snmpcheck
+
+This tool is built into kali. Here is an example against a Cisco 2960s
+
+```bash
+snmp-check 192.168.10.15 -c public
+snmp-check v1.9 - SNMP enumerator
+Copyright (c) 2005-2015 by Matteo Cantoni (www.nothink.org)
+
+[+] Try to connect to 192.168.10.15:161 using SNMPv1 and community 'public'
+
+[*] System information:
+
+  Host IP address               : 192.168.10.15
+  Hostname                      : Switch.pu.pri
+  Description                   : Cisco IOS Software, C2960S Software (C2960S-UNIVERSALK9-M), Version 15.2(2)E9, RELEASE SOFTWARE (fc4)  Technical Support: http://www.cisco.com/techsupport  Copyright (c) 1986-2018 by Cisco Systems, Inc.  Compiled Sat 08-Sep-18 14:56 by prod_rel_team
+  Contact                       : bjones@gmail.com
+  Location                      : Rack2-U30
+  Uptime snmp                   : -
+  Uptime system                 : 00:55:56.67
+  System date                   : -
+```
+
+### onesixtyone
+
+This tool allows you to use a dictionary of community strings and a file for hosts.
+
+```bash
+examples: onesixtyone 192.168.4.0/24 public
+          onesixtyone -c dict.txt -i hosts -o my.log -w 100
+
+```
+
+A scan on my home lab with a Cisco 2960, a Windows DC and an HP 8600 printer
+
+```bash
+onesixtyone 192.168.10.0/24 public
+Scanning 256 hosts, 1 communities
+192.168.10.15 [public] Cisco IOS Software, C2960S Software (C2960S-UNIVERSALK9-M), Version 15.2(2)E9, RELEASE SOFTWARE (fc4)  Technical Support: http://www.cisco.com/techsupport  Copyright (c) 1986-2018 by Cisco Systems, Inc.  Compiled Sat 08-Sep-18 14:56 by prod_rel_team
+192.168.10.221 [public] Hardware: Intel64 Family 6 Model 69 Stepping 1 AT/AT COMPATIBLE - Software: Windows Version 6.1 (Build 7601 Multiprocessor Free)
+192.168.10.239 [public] HP ETHERNET MULTI-ENVIRONMENT
+Error in sendto: Permission denied
+```
+
+
+
 
 #### Examples for Cisco devices
 
