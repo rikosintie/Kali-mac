@@ -440,9 +440,10 @@ iPerf-Test:  - - - - - - - - - - - - - - - - - - - - - - - - -
 ```
 
 I have written some blogs on iperf3:
-[Using iPerf3 to verify Link Quality](https://mwhubbard.blogspot.com/2014/12/using-iperf3-to-verify-link-quality.html)
-[Using iPerf3 to Test 2.5Gb/5Gb and 10Gb Links](https://mwhubbard.blogspot.com/2018/08/using-iperf3-to-test-25gb5gb-and-10gb.html)
-[Update to testing 10Gb links with iPerf3](https://mwhubbard.blogspot.com/2018/09/update-to-testing-10gb-links-with-iperf3.html)
+
+- [Using iPerf3 to verify Link Quality](https://mwhubbard.blogspot.com/2014/12/using-iperf3-to-verify-link-quality.html)
+- [Using iPerf3 to Test 2.5Gb/5Gb and 10Gb Links](https://mwhubbard.blogspot.com/2018/08/using-iperf3-to-test-25gb5gb-and-10gb.html)
+- [Update to testing 10Gb links with iPerf3](https://mwhubbard.blogspot.com/2018/09/update-to-testing-10gb-links-with-iperf3.html)
 
 ### speedtest-cli
 
