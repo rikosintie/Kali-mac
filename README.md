@@ -343,7 +343,7 @@ $ neofetch
 
 iPerf3 is a udp/tcp bandwidth quality/measurement tool. iPerf3 is principally developed by ESnet/Lawrence Berkeley National Laboratory. It is released under a three-clause BSD license. It is a great tool for diagnosing bandwidth issues. It can be used to test Access Points, Ethernet links, VPN, WAN links, almost anything.
 
-Intel has a Docker image for iPerf3. It can be used as a sever or client. I like it as a server but prefer to install iperf3 locally for client testing. I like to use a lot of options when I'm testing links and the Docker image isn't so flexible.
+Intel has a Docker image for iPerf3. It can be used as a sever or client.
 
 The image is available on docker hub at [clearlinux/iperf](https://hub.docker.com/r/clearlinux/iperf)
 
@@ -367,9 +367,9 @@ I created aliases in the ~/.oh-my-zsh/zsh-aliases.zsh file for the server and cl
 
 - `alias mw-iperf3='sudo docker run -it --rm --name=iperf-srv -p 5201:5201 clearlinux/iperf -s'`
 
-\# start docker iperf3 client on port xxxx
+\# start docker iperf3 client on port 5201, omit 2 seconds, run for  5 seconds, 4 streams
 
-- `alias mw-iperf3c='sudo docker run -it --rm --network=host -p 5200 clearlinux/iperf -c $1'`
+- `alias mw-iperf3c='sudo docker run -it --rm clearlinux/iperf -c 192.168.10.181 -p 5200 -O 2 -t 5 -P 4 $1'`
 
 Note: the "$1" after the -c means pass the terminal option to the alias. That allows you to enter the
 ip address of the server.
@@ -380,7 +380,9 @@ For example:
 
 ### iPerf3 local installation
 
-There are no compiled binaries available on the esnet site for iPerf3. We will download the tar file and then build the binary. This used to be a daily task on Linux but now it's somewhat rare to have to build your own binary.
+Even though the docker works fine, I like to have a local version of iPerf. There are no compiled binaries available on the esnet site for iPerf3. We will download the tar file and then build the binary.
+
+This used to be a daily task on Linux but now it's somewhat rare to have to build your own binary because of Snaps, Appimages and Flatpaks. Keep in mind that this local version will not be updated automatically. You will have to rebuild.
 
 Download the tarball from [downloads](https://downloads.es.net/pub/iperf/)  - As of November, 2023 this is the latest tarball
 
