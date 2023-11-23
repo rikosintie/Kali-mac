@@ -341,7 +341,7 @@ $ neofetch
 
 ### iPerf3 Docker image
 
-iPerf3 is a udp/tcp bandwidth tool. iperf3 is principally developed by ESnet/Lawrence Berkeley National Laboratory. It is released under a three-clause BSD license. It is a great tool for diagnosing bandwidth issues. It can be used to test Access Points, Ethernet links, VPN, WAN links, almost anything.
+iPerf3 is a udp/tcp bandwidth quality/measurement tool. iPerf3 is principally developed by ESnet/Lawrence Berkeley National Laboratory. It is released under a three-clause BSD license. It is a great tool for diagnosing bandwidth issues. It can be used to test Access Points, Ethernet links, VPN, WAN links, almost anything.
 
 Intel has a Docker image for iPerf3. It can be used as a sever or client. I like it as a server but prefer to install iperf3 locally for client testing. I like to use a lot of options when I'm testing links and the Docker image isn't so flexible.
 
@@ -358,7 +358,7 @@ The easiest way to get started with this image is by simply pulling it from Dock
         **Run as Server:**
   - `sudo docker run -it --rm --name=iperf-srv -p 5201:5201 clearlinux/iperf -s`
 
-I created aliases in the ~/.oh-my-zsh/zsh-aliases file for the server and client versions:
+I created aliases in the ~/.oh-my-zsh/zsh-aliases.zsh file for the server and client versions:
 
 \# start docker iperf3 server on port 5201
 
@@ -439,12 +439,10 @@ iPerf-Test:  - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ```
 
-
 I have written some blogs on iperf3:
 [Using iPerf3 to verify Link Quality](https://mwhubbard.blogspot.com/2014/12/using-iperf3-to-verify-link-quality.html)
 [Using iPerf3 to Test 2.5Gb/5Gb and 10Gb Links](https://mwhubbard.blogspot.com/2018/08/using-iperf3-to-test-25gb5gb-and-10gb.html)
 [Update to testing 10Gb links with iPerf3](https://mwhubbard.blogspot.com/2018/09/update-to-testing-10gb-links-with-iperf3.html)
-
 
 ### speedtest-cli
 
