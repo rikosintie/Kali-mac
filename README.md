@@ -16,14 +16,14 @@
   - [Terminator](#terminator)
   - [tldr](#tldr)
   - [bd](#bd)
-  - [speedtest-cli](#speedtest-cli)
-  - [ipmitool](#ipmitool)
   - [Flatpak](#flatpak)
     - [Install the Software Flatpak plugin](#install-the-software-flatpak-plugin)
     - [Add the Flathub repository](#add-the-flathub-repository)
   - [Mission Center](#mission-center)
   - [Neofetch](#neofetch)
 - [Additional Tools not related to the Kali Installation](#additional-tools-not-related-to-the-kali-installation)
+  - [speedtest-cli](#speedtest-cli)
+  - [ipmitool](#ipmitool)
   - [keepassxc](#keepassxc)
   - [IPv4Bypass](#ipv4bypass)
   - [D(HE)ater](#dheater)
@@ -277,17 +277,6 @@ Quickly go back to a specific parent directory in bash instead of typing "cd ../
 - Create an alias for bd in the ~/.oh-my-zsh/custom/my-aliases.zsh file `alias bd="bd -si"` .
 - Reference - [bd on github](https://github.com/vigneshwaranr/bd)
 
-### speedtest-cli
-
-Speedtest without the browser
-  * `sudo apt install speedtest-cli`
-
-### ipmitool
-
-A tool for working with ipmi software like Dell iDrac and HP ilo
-
-- `sudo apt-get install ipmitool`
-
 ### Flatpak
 
 Flatpak is a universal installer for Linux. It is similar to Snap on Ubuntu.
@@ -344,7 +333,19 @@ $ neofetch
                                              .
 
 ```
+
 ## Additional Tools not related to the Kali Installation
+
+### speedtest-cli
+
+Speedtest without the browser
+  - `sudo apt install speedtest-cli`
+
+### ipmitool
+
+A tool for working with ipmi software like Dell iDrac and HP ilo
+
+- `sudo apt-get install ipmitool`
 
 ### keepassxc
 
