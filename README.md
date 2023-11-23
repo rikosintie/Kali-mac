@@ -21,7 +21,8 @@
   - [Flatpak](#flatpak)
     - [Install the Software Flatpak plugin](#install-the-software-flatpak-plugin)
     - [Add the Flathub repository](#add-the-flathub-repository)
-- [Additional Tools not related to the Kali Installion](#additional-tools-not-related-to-the-kali-installion)
+  - [Neofetch](#neofetch)
+- [Additional Tools not related to the Kali Installation](#additional-tools-not-related-to-the-kali-installation)
   - [keepassxc](#keepassxc)
   - [IPv4Bypass](#ipv4bypass)
   - [D(HE)ater](#dheater)
@@ -305,7 +306,36 @@ Unfortunately, a reboot is required to activate Flatpak.
 
 Once the system restarts you can go to [flathub](https://flathub.org/) - The Linux App Store and look for applications to install.
 
-## Additional Tools not related to the Kali Installion
+### Neofetch
+
+Neofetch is a tool that dumps out system information. It's short and sweet but useful.
+
+```bash
+$ neofetch
+..............                                     bjones@Dell-G5-5587
+            ..,;:ccc,.                             -------------------
+          ......''';lxO.                           OS: Kali GNU/Linux Rolling x86_64
+.....''''..........,:ld;                           Host: MacBookPro12,1 1.0
+           .';;;:::;,,.x,                          Kernel: 6.5.0-kali3-amd64
+      ..'''.            0Xxoc:,.  ...              Uptime: 13 hours, 50 mins
+  ....                ,ONkc;,;cokOdc',.            Packages: 4618 (dpkg), 9 (flatpak)
+ .                   OMo           ':ddo.          Shell: zsh 5.9
+                    dMc               :OO;         Resolution: 2560x1600
+                    0M.                 .:o.       DE: GNOME 45.0
+                    ;Wd                            WM: Mutter
+                     ;XO,                          WM Theme: Kali-Dark
+                       ,d0Odlc;,..                 Theme: adw-gtk3-dark [GTK2/3]
+                           ..',;:cdOOd::,.         Icons: Flat-Remix-Blue-Dark [GTK2/3]
+                                    .:d;.':;.      Terminal: terminator
+                                       'd,  .'     CPU: Intel i5-5287U (4) @ 3.300GHz
+                                         ;l   ..   GPU: Intel Iris Graphics 6100
+                                          .o       Memory: 7080MiB / 15893MiB
+                                            c
+                                            .'
+                                             .
+
+```
+## Additional Tools not related to the Kali Installation
 
 ### keepassxc
 
@@ -334,6 +364,7 @@ D(HE)ater can be installed directly via pip from PyPi
 dheat --protocol tls ecc256.badssl.com
 dheat --protocol ssh ecc256.badssl.com
 ```
+
 or can be used via Docker from Docker Hub
 
 ```bash docker pull balasys/dheater
