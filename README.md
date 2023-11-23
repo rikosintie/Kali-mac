@@ -22,6 +22,9 @@
   - [Mission Center](#mission-center)
   - [Neofetch](#neofetch)
 - [Additional Tools not related to the Kali Installation](#additional-tools-not-related-to-the-kali-installation)
+  - [iPerf3 Docker image](#iperf3-docker-image)
+  - [iPerf3 local installation](#iperf3-local-installation)
+  - [To use iPerf3 as a client](#to-use-iperf3-as-a-client)
   - [speedtest-cli](#speedtest-cli)
   - [ipmitool](#ipmitool)
   - [keepassxc](#keepassxc)
@@ -336,10 +339,118 @@ $ neofetch
 
 ## Additional Tools not related to the Kali Installation
 
+### iPerf3 Docker image
+
+iPerf3 is a udp/tcp bandwidth tool. iperf3 is principally developed by ESnet/Lawrence Berkeley National Laboratory. It is released under a three-clause BSD license. It is a great tool for diagnosing bandwidth issues. It can be used to test Access Points, Ethernet links, VPN, WAN links, almost anything.
+
+Intel has a Docker image for iPerf3. It can be used as a sever or client. I like it as a server but prefer to install iperf3 locally for client testing. I like to use a lot of options when I'm testing links and the Docker image isn't so flexible.
+
+The image is available on docker hub at [clearlinux/iperf](https://hub.docker.com/r/clearlinux/iperf)
+Note: If you don't have a Docker account I recommend creating one. It's free and you will need it to do any Cisco/Juniper/Aruba NetDevOps work.
+
+The easiest way to get started with this image is by simply pulling it from Docker Hub.
+
+- Pull the image from Docker Hub:
+
+  - `docker pull clearlinux/iperf`
+
+- Start a container using the examples below:
+        **Run as Server:**
+  - `sudo docker run -it --rm --name=iperf-srv -p 5201:5201 clearlinux/iperf -s`
+
+I created aliases in the ~/.oh-my-zsh/zsh-aliases file for the server and client versions:
+
+\# start docker iperf3 server on port 5201
+
+- `alias mw-iperf3='sudo docker run -it --rm --name=iperf-srv -p 5201:5201 clearlinux/iperf -s'``
+
+\# start docker iperf3 client on port xxxx
+
+- `alias mw-iperf3c='sudo docker run -it --rm --network=host -p 5200 clearlinux/iperf -c $1'`
+
+Note: the "$1" after the -c means pass the terminal option to the alias. That allows you to enter the
+ip address of the server.
+
+For example:
+
+- `mw-iperf3c 192.168.10.181`
+
+### iPerf3 local installation
+
+There are no compiled binaries available on the esnet site for iPerf3. We will download the tar file and then build the binary. This used to be a daily task on Linux but now it's somewhat rare to have to build your own binary.
+
+Download the tarball from [downloads](https://downloads.es.net/pub/iperf/)  - As of November, 2023 this is the latest tarball
+
+`iperf-3-current.tar.gz`
+
+Unpack the file, cd to the iperf directory, and run the build tools.
+
+```bash
+tar xvzf iperf-3-current.tar.gz
+cd iperf-3.15
+./configure
+sudo make
+sudo make install
+ldconfig
+```
+
+### To use iPerf3 as a client
+
+**In this exmample:**
+
+``` text
+-c - client mode
+-O 2 - Ignore the first 2 seconds. I find that on wireless this is a good option to use.
+-P 5 - Use 5 parallel streams. I have done a lot of AP testing and 4-5 streams seems to work best.
+-t 5 - Run the test for 5 seconds. The default is 10
+-T iPerf-test - Name of the run. If you are testing a lot of APs, you should name each run and then you have a good log. You can use Excel to create the command with the AP name embedded in the command.
+```
+
+```bash
+iperf3 -c 192.168.10.181 -O 2 -P 5 -T iPerf-Test
+iPerf-Test:  Connecting to host 192.168.10.181, port 5201
+iPerf-Test:  [  5] local 192.168.10.154 port 43050 connected to 192.168.10.181 port 5201
+iPerf-Test:  [  7] local 192.168.10.154 port 43062 connected to 192.168.10.181 port 5201
+iPerf-Test:  [  9] local 192.168.10.154 port 43066 connected to 192.168.10.181 port 5201
+iPerf-Test:  [ 11] local 192.168.10.154 port 43068 connected to 192.168.10.181 port 5201
+iPerf-Test:  [ 13] local 192.168.10.154 port 43082 connected to 192.168.10.181 port 5201
+iPerf-Test:  [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+iPerf-Test:  [  5]   0.00-1.00   sec  6.79 MBytes  56.9 Mbits/sec    0    320 KBytes       (omitted)
+iPerf-Test:  [  7]   0.00-1.00   sec  6.17 MBytes  51.7 Mbits/sec    0    279 KBytes       (omitted)
+iPerf-Test:  [  9]   0.00-1.00   sec  5.82 MBytes  48.8 Mbits/sec    0    270 KBytes       (omitted)
+iPerf-Test:  [ 11]   0.00-1.00   sec  6.25 MBytes  52.4 Mbits/sec    0    296 KBytes       (omitted)
+iPerf-Test:  [ 13]   0.00-1.00   sec  6.38 MBytes  53.5 Mbits/sec    0    293 KBytes       (omitted)
+iPerf-Test:  [SUM]   0.00-1.00   sec  31.4 MBytes   263 Mbits/sec    0             (omitted)
+iPerf-Test:  - - - - - - - - - - - - - - - - - - - - - - - - -
+iPerf-Test:  [  5]   1.00-2.00   sec  8.46 MBytes  71.0 Mbits/sec    0    643 KBytes       (omitted)
+iPerf-Test:  [  7]   1.00-2.00   sec  6.77 MBytes  56.8 Mbits/sec    0    571 KBytes       (omitted)
+iPerf-Test:  [  9]   1.00-2.00   sec  6.52 MBytes  54.7 Mbits/sec    0    540 KBytes       (omitted)
+iPerf-Test:  [ 11]   1.00-2.00   sec  8.20 MBytes  68.8 Mbits/sec    0    607 KBytes       (omitted)
+iPerf-Test:  [ 13]   1.00-2.00   sec  6.87 MBytes  57.6 Mbits/sec    0    598 KBytes       (omitted)
+iPerf-Test:  [SUM]   1.00-2.00   sec  36.8 MBytes   309 Mbits/sec    0             (omitted)
+iPerf-Test:  - - - - - - - - - - - - - - - - - - - - - - - - -
+iPerf-Test:  [  5]   0.00-1.00   sec  6.25 MBytes  52.4 Mbits/sec    0    946 KBytes
+iPerf-Test:  [  7]   0.00-1.00   sec  7.31 MBytes  61.3 Mbits/sec    0    863 KBytes
+iPerf-Test:  [  9]   0.00-1.00   sec  7.28 MBytes  61.1 Mbits/sec    0    819 KBytes
+iPerf-Test:  [ 11]   0.00-1.00   sec  6.17 MBytes  51.8 Mbits/sec    0    892 KBytes
+iPerf-Test:  [ 13]   0.00-1.00   sec  7.38 MBytes  61.9 Mbits/sec    0    856 KBytes
+iPerf-Test:  [SUM]   0.00-1.00   sec  34.4 MBytes   288 Mbits/sec    0
+iPerf-Test:  - - - - - - - - - - - - - - - - - - - - - - - - -
+
+```
+
+
+I have written some blogs on iperf3:
+[Using iPerf3 to verify Link Quality](https://mwhubbard.blogspot.com/2014/12/using-iperf3-to-verify-link-quality.html)
+[Using iPerf3 to Test 2.5Gb/5Gb and 10Gb Links](https://mwhubbard.blogspot.com/2018/08/using-iperf3-to-test-25gb5gb-and-10gb.html)
+[Update to testing 10Gb links with iPerf3](https://mwhubbard.blogspot.com/2018/09/update-to-testing-10gb-links-with-iperf3.html)
+
+
 ### speedtest-cli
 
 Speedtest without the browser
-  - `sudo apt install speedtest-cli`
+
+- `sudo apt install speedtest-cli`
 
 ### ipmitool
 
