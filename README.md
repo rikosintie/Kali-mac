@@ -540,11 +540,10 @@ Nmap
 There is an Nmap script for Ubiquiti Discovery - ubiquiti-discovery.nse. It pulls down more information than the bash script and will work on Windows. The home page for the script is [here](https://nmap.org/nsedoc/scripts/ubiquiti-discovery.html). The script is built into current versions of nmap.
 
 If the script isn't in nmap, you will need to download two files from the nmap repository:
-[tableaux.lua](https://svn.nmap.org/nmap/nselib/tableaux.lua)
-[ubiquiti-discovery.nse](https://svn.nmap.org/nmap/scripts/ubiquiti-discovery.nse)
-
-- Save tableaux.lua to /usr/share/nmap/nselib
-- Save ubiquiti-discovery.nse to /usr/share/nmap/scripts
+- [tableaux.lua](https://svn.nmap.org/nmap/nselib/tableaux.lua)
+  - Save tableaux.lua to /usr/share/nmap/nselib
+- [ubiquiti-discovery.nse](https://svn.nmap.org/nmap/scripts/ubiquiti-discovery.nse)
+  - Save ubiquiti-discovery.nse to /usr/share/nmap/scripts
 
 Execute the script
 
