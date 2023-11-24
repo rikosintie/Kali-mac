@@ -587,7 +587,9 @@ Nmap done: 1 IP address (1 host up) scanned in 0.37 seconds
 
 ```
 
-Here is a blog I wrote about the Ubiquiti discovery protocol with more details. If you have a lot of Ubiqiti radios, the blog has a shell script that will scan a batch of IPs and report the firmware version.
+Now you know the firware version. Look at the Ubiquiti site for known vulnerabilities and attack!
+
+Here is a blog I wrote about the Ubiquiti discovery protocol with more details. If you have a lot of Ubiquiti radios, the blog has a shell script that will scan a batch of IPs and report the firmware version.
 
 [Ubiquiti Discovery Protocol - Find the firmware version-SSID-Model](https://mwhubbard.blogspot.com/2019/02/ubiquiti-discovery-protocol-find.html)
 
