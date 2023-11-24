@@ -534,7 +534,51 @@ echo -ne "\x01\x00\x00\x00" | socat -t 1 udp:192.168.10.50:10001 - | hexdump -C
 000000a2
 
 ```
-Here is a blog I wrote about the Ubiquiti discovery protocol.
+
+Nmap
+There is an Nmap script for Ubiquiti Discovery - ubiquiti-discovery.nse. It pulls down more information than the bash script and will work on Windows. The home page for the script is [here](https://nmap.org/nsedoc/scripts/ubiquiti-discovery.html).
+
+`sudo nmap -sU -p 10001 --script ubiquiti-discovery.nse -oG ubnt 192.168.10.50`
+
+```bash
+-p - port default is 10001
+-oG ubnt - save output in "grepable format"
+```
+Here is the script output
+
+```bash
+sudo nmap -sU -p 10001 --script ubiquiti-discovery.nse -oG ubnt 192.168.10.50
+[sudo] password for bjones:
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2023-11-23 19:46 PST
+Nmap scan report for 192.168.10.50
+Host is up (0.0019s latency).
+
+PORT      STATE SERVICE
+10001/udp open  ubiquiti-discovery
+| ubiquiti-discovery:
+|   protocol: v1
+|   firmware: WA.ar934x.v8.7.1.42832.200623.1641
+|   version: v8.7.1
+|   uptime_seconds: 94641897
+|   uptime: 1095 days 09:24:57
+|   hostname: Office
+|   product: Loco5AC
+|   essid: death2all
+|   model: NanoStation 5AC loco
+|   interface_to_ip:
+|     fc:ec:da:c4:6e:55:
+|       192.168.10.50
+|       169.254.110.85
+|   mac_addresses:
+|_    fc:ec:da:c4:6e:55
+MAC Address: FC:EC:DA:C4:6E:55 (Ubiquiti Networks)
+Service Info: OS: Linux
+
+Nmap done: 1 IP address (1 host up) scanned in 0.37 seconds
+
+```
+
+Here is a blog I wrote about the Ubiquiti discovery protocol with more details. If you have a lot of Ubiqiti radios, the blog has a shell script that will scan a batch of IPs and report the firmware version.
 
 [Ubiquiti Discovery Protocol - Find the firmware version-SSID-Model](https://mwhubbard.blogspot.com/2019/02/ubiquiti-discovery-protocol-find.html)
 
